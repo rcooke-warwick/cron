@@ -1,0 +1,9 @@
+version: "2.1"
+services:
+  cron-block:
+    build:
+      context: .
+    restart: always
+    #image: ghcr.io/balena-io-playground/cron-block:latest
+    ports:
+      - "80:3000"

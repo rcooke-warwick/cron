@@ -1,11 +1,6 @@
-# balenablock-template
-**Template block enabling you to get started building balenablocks for your projects and fleets**
+# cron block
+**A block to simplify scheduling actions on your device**
 
-## Highlights
-
-- **Example balenablock**: An example for you to start building your own balenablocks!
-- **Multi-arch Auto-publishing**: Pre-build images for your users' custom architectures using GitHub actions
-- **Self-documenting**: For nodejs express-based blocks, automatically generate [swagger.io](https://swagger.io/) documentation
 
 ## Setup and configuration
 
@@ -18,41 +13,37 @@ Or add the following service to your `docker-compose.yml`:
 ```yaml
 version: "2.1"
 services:
-  template:
+  cron-block:
     restart: always
-    image: ghcr.io/balena-io-playground/balenablock-template:latest
+    image: ghcr.io/balena-io-playground/cron-block:latest
     ports:
       - "80:3000"
 ```
 
 > If you want to use a webserver exposing a public facing page, you will need to remove the exposed port 80
+> you can select the port used with an environment variable `CHRON_PORT`
 
 ## Documentation
 
 Head over to our [docs](https://balenablocks.io/template/docs/) for detailed installation and usage instructions, customization options and more!
 
 ## Motivation
-
-BalenaBlocks are drop-in chunks of functionality built to handle the basics and speed up how developers prototype their next big project.
-For example, you might use a block to quickly provide a [web browser](https://github.com/balenablocks/browser) to your project or maybe set up your device's [WiFi credentials](https://github.com/balenablocks/wifi-connect).
-Blocks are neither join-able like fleets nor fork-able like projects; they’re a resource for everyone to use when creating their own fleets, projects, proof of concepts and prototypes.
-This is a template repo to get you started working on your own balenaBlocks.
-Blocks should ideally be lightweight, simple to use and well documented docker images, pre-built for use alongside other services.
-From this template you should be ready to go with:
-
-- GitHub actions for publishing multi-arch docker images for your blocks
-- Simple node.js REST server as a demonstration block
-- Self-documenting
-- `balena.yml` configuration file, required for publishing on the [balenaHub](hub.balena.io)
-- [landr](https://github.com/product-os/landr) compliant documentation
+This block presents a simple api to allow you to create and remove cron jobs. For example, you can create a job to occur every 2 mins: 
+```
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"minute": "*/2", "command": "echo hello-world"}' \
+   DEVICE_URL/createJob
+```
+The syntax for specifying time intervals can be found here:
+https://ostechnix.com/a-beginners-guide-to-cron-jobs/
 
 ## Getting Help
 
-If you're having any problem, please [raise an issue](https://github.com/balenablocks/template/issues/new) on GitHub and we will be happy to help.
+If you're having any problem, please [raise an issue](https://github.com/balenablocks/cron-block/issues/new) on GitHub and we will be happy to help.
 
 ## Contributing
 
-Do you want to help make balenablock-template better? Take a look at our [Contributing Guide](https://balenablocks.io/template/contributing). Hope to see you around!
+Do you want to help make cron-block better? Take a look at our [Contributing Guide](https://balenablocks.io/cron-block/contributing). Hope to see you around!
 
 ## License
 
