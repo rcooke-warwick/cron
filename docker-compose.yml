@@ -4,6 +4,6 @@ services:
     build:
       context: .
     restart: always
-    #image: ghcr.io/balena-io-playground/cron-block:latest
+    #image: ghcr.io/rcooke-warwick/cron-block:latest
     ports:
       - "80:3000"
