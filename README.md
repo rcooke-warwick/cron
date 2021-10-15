@@ -6,7 +6,7 @@
 
 Use this as standalone with the button below:
 
-[![template block deploy with balena](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/rcooke-warwick/cron-block)
+[![template block deploy with balena](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/rcooke-warwick/cron)
 
 Or add the following service to your `docker-compose.yml`:
 
@@ -15,9 +15,9 @@ version: "2.1"
 volumes:
   scripts:
 services:
-  cron-block:
+  cron:
     restart: always
-    image: ghcr.io/balena-io-playground/cron-block:latest
+    image: ghcr.io/balena-io-playground/cron:latest
     volumes:
       - "scripts:/data"
     ports:
@@ -40,7 +40,7 @@ You can add scripts into the scripts volume, and schedule them to be run as desc
 
 ## Getting Help
 
-If you're having any problem, please [raise an issue](https://github.com/rcooke-warwick/cron-block/issues/new) on GitHub and we will be happy to help.
+If you're having any problem, please [raise an issue](https://github.com/rcooke-warwick/cron/issues/new) on GitHub and we will be happy to help.
 
 
 ## License

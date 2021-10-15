@@ -1,4 +1,4 @@
-name: cron-block
+name: cron
 description: >-
   Simple block to simplify creating and managing cron jobs
 fleetcta: Template balenablock
@@ -8,11 +8,11 @@ assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/rcooke-warwick/cron-block'
+      url: 'https://github.com/rcooke-warwick/cron'
   logo:
     type: blob.asset
     data:
-      url: 'https://raw.githubusercontent.com/rcooke-warwick/cron-block/main/docs/images/icon.png'
+      url: 'https://raw.githubusercontent.com/rcooke-warwick/cron/main/docs/images/icon.png'
 data:
   defaultDeviceType: raspberrypi3
   supportedDeviceTypes:

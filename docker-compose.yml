@@ -1,9 +1,9 @@
 version: "2.1"
 services:
-  cron-block:
+  cron:
     build:
       context: .
     restart: always
-    #image: ghcr.io/rcooke-warwick/cron-block:latest
+    #image: ghcr.io/rcooke-warwick/cron:latest
     ports:
       - "80:3000"
