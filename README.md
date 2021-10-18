@@ -17,7 +17,7 @@ volumes:
 services:
   cron:
     restart: always
-    image: ghcr.io/balena-io-playground/cron:latest
+    image: ghcr.io/rcooke-warwick/cron:latest
     volumes:
       - "scripts:/data"
     ports:
